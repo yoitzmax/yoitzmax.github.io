@@ -1,10 +1,143 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Wordle Game</title>
-  </head>
-  <body>
-    <h1>Hello!</h1>
-    <p>Your Wordle game will go here.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Obsidian Clicks: Gold Luxury Edition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <div id="app">
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="brand">
+        <img src="" alt="" id="logo" />
+        <h1>Obsidian Clicks</h1>
+      </div>
+      <div class="top-controls">
+        <button id="sound-toggle" title="Toggle sound">🔊</button>
+        <button id="export-save" title="Export save">⬇️ Export</button>
+        <button id="import-save" title="Import save">⬆️ Import</button>
+        <button id="reset-btn" title="Prestige / Reset">⚑ Prestige</button>
+        <button id="shop-btn" title="Open Shop">🛒 Shop</button>
+      </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="container">
+      <!-- LEFT COLUMN: CLICKER + UPGRADES -->
+      <section class="left-column">
+        <!-- CLICK PANEL -->
+        <div class="click-panel card">
+          <div class="score-row">
+            <div>
+              <div class="label">Clicks</div>
+              <div id="score" class="score">0</div>
+            </div>
+            <div>
+              <div class="label">Per Click</div>
+              <div id="perClick" class="score small">1</div>
+            </div>
+            <div>
+              <div class="label">Per Sec</div>
+              <div id="perSec" class="score small">0</div>
+            </div>
+            <div>
+              <div class="label">Gold Bonus</div>
+              <div id="gold-bonus" class="score small">×1.00</div>
+            </div>
+          </div>
+
+          <!-- BIG CLICKER -->
+          <div class="big-clicker" id="big-clicker">
+            <div class="clicker-label">CLICK</div>
+            <div class="clicker-value" id="clicker-value">+1</div>
+          </div>
+
+          <!-- QUICK ACTIONS -->
+          <div class="quick-actions">
+            <button id="combo-btn">Combo ×1</button>
+            <button id="boost-btn">Use Boost (10% for 30s)</button>
+            <button id="auto-clicker-btn">Auto Clicker</button>
+          </div>
+        </div>
+
+        <!-- UPGRADES PANEL -->
+        <div class="upgrades card">
+          <h2>Upgrades</h2>
+          <div id="upgrades-list" class="upgrades-grid"></div>
+        </div>
+
+        <!-- ACHIEVEMENTS PANEL -->
+        <div class="achievements card">
+          <h2>Achievements</h2>
+          <div id="achievements-list" class="ach-grid"></div>
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN: STATS, LEADERBOARD, SHOP -->
+      <aside class="right-column">
+        <div class="card stats">
+          <h3>Prestige</h3>
+          <p>Prestige resets progress for permanent <strong id="prestige-bonus">×1.00</strong> multiplier.</p>
+          <p>Prestige points: <span id="prestige-points">0</span></p>
+        </div>
+
+        <div class="card leaderboard">
+          <h3>Local Leaderboard</h3>
+          <ol id="leaderboard-list"></ol>
+          <div class="leader-actions">
+            <input id="name-input" placeholder="Enter name" maxlength="12" />
+            <button id="submit-score">Submit Score</button>
+          </div>
+        </div>
+
+        <div class="card shop" id="shop-panel" style="display:none">
+          <h3>Shop</h3>
+          <div id="shop-items"></div>
+        </div>
+
+        <div class="card help">
+          <h3>Shortcuts</h3>
+          <ul>
+            <li><b>Space</b> — Click</li>
+            <li><b>P</b> — Prestige</li>
+            <li><b>S</b> — Toggle Sound</li>
+            <li><b>E</b> — Export Save</li>
+            <li><b>O</b> — Open Shop</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <small>Gold Luxury Clicker • Built for GitHub Pages • Local saves • Fancy vibes</small>
+    </footer>
+  </div>
+
+  <!-- TEMPLATES -->
+  <template id="upgrade-template">
+    <div class="upgrade">
+      <div class="u-info">
+        <div class="u-name"></div>
+        <div class="u-desc"></div>
+      </div>
+      <div class="u-controls">
+        <div class="u-cost"></div>
+        <button class="buy-btn">Buy</button>
+      </div>
+    </div>
+  </template>
+
+  <template id="ach-template">
+    <div class="ach">
+      <div class="ach-name"></div>
+      <div class="ach-desc"></div>
+    </div>
+  </template>
+
+  <script src="script.js" defer></script>
+</body>
 </html>
