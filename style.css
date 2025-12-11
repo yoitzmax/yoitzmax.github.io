@@ -159,4 +159,177 @@ a, button {
   transform: scale(1.1);
   box-shadow: 0 0 12px rgba(255, 215, 0, 1);
 }
+/* ===================== UPGRADES ===================== */
+.upgrades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.upgrade-card {
+  background: linear-gradient(135deg, #222, #111);
+  border: 2px solid gold;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.upgrade-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 20px gold;
+}
+
+.upgrade-card h3 {
+  font-size: 1.1rem;
+  color: gold;
+  margin-bottom: 5px;
+  text-shadow: 0 0 6px gold;
+}
+
+.upgrade-card p {
+  font-size: 0.9rem;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.upgrade-card button {
+  background: linear-gradient(45deg, #c8a415, #ffd700);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #000;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.7);
+  transition: all 0.2s ease;
+}
+
+.upgrade-card button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px gold;
+}
+
+/* ===================== ACHIEVEMENTS ===================== */
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+}
+
+.achievement-card {
+  background: linear-gradient(145deg, #1b1b1b, #111);
+  border: 2px solid gold;
+  border-radius: 10px;
+  padding: 8px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.achievement-card.unlocked {
+  background: linear-gradient(145deg, #333, #222);
+  box-shadow: 0 0 15px gold;
+}
+
+.achievement-card h4 {
+  font-size: 0.9rem;
+  color: gold;
+  text-shadow: 0 0 4px gold;
+  margin-bottom: 4px;
+}
+
+.achievement-card p {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+/* ===================== SHOP ===================== */
+.shop {
+  background: linear-gradient(135deg, #222, #111);
+  border: 2px solid gold;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.shop h2 {
+  color: gold;
+  font-size: 1.3rem;
+  text-shadow: 0 0 8px gold;
+  margin-bottom: 12px;
+}
+
+.shop-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  background: linear-gradient(145deg, #111, #222);
+  border: 1px solid gold;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.shop-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px gold;
+}
+
+.shop-item button {
+  background: linear-gradient(45deg, #c8a415, #ffd700);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #000;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
+  transition: all 0.2s ease;
+}
+
+.shop-item button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px gold;
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+  text-align: center;
+  padding: 12px 0;
+  background: linear-gradient(90deg, #1c1c1c, #222);
+  border-top: 2px solid gold;
+  color: #ddd;
+  box-shadow: 0 -2px 10px rgba(255, 215, 0, 0.3);
+}
+
+/* ===================== SPECIAL EFFECTS ===================== */
+.glow {
+  text-shadow: 0 0 8px gold, 0 0 15px #fff3;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: gold;
+  border-radius: 50%;
+  animation: float 2s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 0.8; }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media screen and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    padding: 15px;
+  }
+}
 
